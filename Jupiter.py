@@ -10,7 +10,7 @@ It will help you have specific watermarker(text or image) embedded into or
 extracted from your image file with least damage made to the visual quality.
 
 * Author: Lifu Huang
-* Version: 0.1
+* Version: 0.2
 '''
 strHelp = '''
 * Command:
@@ -51,7 +51,7 @@ def print_welcome():
     print()
     print(strHelp)
 
-def embedImage(sourceFile, destFile, watermarkerFile):
+def embed_image(sourceFile, destFile, watermarkerFile):
     '''Embed watermarker into an image file.'''
     
     print('* Loading source file {}...'.format(sourceFile))
@@ -84,7 +84,7 @@ def embedImage(sourceFile, destFile, watermarkerFile):
     print('* Done!')
     return
     
-def extractImage(sourceFile, watermarkerFile):
+def extract_image(sourceFile, watermarkerFile):
     '''Extract watermarker from image file.'''
     
     print('* Loading source file {}...'.format(sourceFile))
@@ -141,7 +141,7 @@ def decrypt(text, key):
             raise DecryptionError
 
 
-def embedText(sourceFile, destFile, text):
+def embed_text(sourceFile, destFile, text):
     '''Embed text into an image file.'''
     
     print('* Loading source file {}...'.format(sourceFile))
@@ -179,7 +179,7 @@ def embedText(sourceFile, destFile, text):
     print('* Done!')
     return
 
-def extractText(sourceFile):
+def extract_text(sourceFile):
     '''Embed text into an image file.'''
 
     print('* Loading source file {}...'.format(sourceFile))
@@ -217,22 +217,22 @@ def main():
                 source = input('Source File Path: ')
                 dest = input('Destination File Path: ')
                 watermarker = input('Watermarker File Path: ')
-                embedImage(source, dest, watermarker)
+                embed_image(source, dest, watermarker)
             elif cmd == 'image out':
                 source = input('Source File Path: ')
                 dest = input('Destination File Path: ')
-                extractImage(source, dest)
+                extract_image(source, dest)
             elif cmd == 'text in':
                 source = input('Source File Path: ')
                 dest = input('Destination File Path: ')
                 text = input('Text: ')
                 code = input('Code: ')
                 encrypted = encrypt(text, code)
-                embedText(source, dest, encrypted)
+                embed_text(source, dest, encrypted)
             elif cmd == 'text out':
                 source = input('Source File Path: ')
                 code = input('Code: ')
-                text = decrypt(extractText(source), code)
+                text = decrypt(extract_text(source), code)
                 print('\nHidden text: ', text, sep = '')
             elif cmd == 'help':
                 print(strHelp)
