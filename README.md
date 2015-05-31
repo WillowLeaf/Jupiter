@@ -8,6 +8,7 @@ extracted from your image file with least damage made to the visual quality.
 Therefore it should not be used in serious situation. Instead, it is just a handy tool for daily use or toy example of this method.
 
 * Command:
+
 image in   -- Embed graphical watermarker into an image file
 
 image out  -- Extract graphical watermarker from embedded image file
