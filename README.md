@@ -9,8 +9,13 @@ Therefore it should not be used in serious situation. Instead, it is just a hand
 
 * Command:
 image in   -- Embed graphical watermarker into an image file
+
 image out  -- Extract graphical watermarker from embedded image file
+
 text in    -- Embed text information into an image file
+
 text out   -- Extract text hidden within an image file
+
 help       -- Show command instruction
+
 exit       -- Exit Jupiter
